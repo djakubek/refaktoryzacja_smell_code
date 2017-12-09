@@ -1,2 +1,1 @@
-# refaktoryzacja_smell_code
-# Ruby
+# Refaktoryzacja https://github.com/benbalter/word-to-markdown
