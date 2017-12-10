@@ -6,7 +6,7 @@ Autor: Daniel Jakubek
 
 Ruby Gem konwertujący Dokument MS [Word do Markdown'a](https://github.com/benbalter/word-to-markdown)
 
-#Instalacja api:
+# Instalacja api:
 
 ```sh
 
@@ -54,7 +54,7 @@ Jak widać aplikacja działa prawidłowo bez żadnych problemów.
 
 #
 
-#Przejdźmy do działania – Problemy zgłaszane przez reek
+# Przejdźmy do działania – Problemy zgłaszane przez reek
 
 ```sh
 
@@ -86,7 +86,7 @@ $ reek -f json lib | jq .[].wiki\_link -r  | sort | uniq -c | sort -n
 
 ```
 
-#Problemy zgłaszane przez flog
+# Problemy zgłaszane przez flog
 
 ```sh
 
@@ -96,7 +96,7 @@ $ reek -f json lib | jq .[].wiki\_link -r  | sort | uniq -c | sort -n
 
 ```
 
-#Problemy zgłaszane przez flay
+# Problemy zgłaszane przez flay
 
 ```sh
 
