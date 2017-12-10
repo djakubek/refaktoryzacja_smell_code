@@ -2,8 +2,6 @@
 
 Autor: Daniel Jakubek
 
-#
-
 Ruby Gem konwertujący Dokument MS [Word do Markdown'a](https://github.com/benbalter/word-to-markdown)
 
 Instalacja:
