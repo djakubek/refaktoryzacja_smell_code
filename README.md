@@ -156,6 +156,7 @@ def naglowek(wielkosc)
 end
 
 ```
+Kolejny przykład
 
 ```ruby
 class WordToMarkdown
