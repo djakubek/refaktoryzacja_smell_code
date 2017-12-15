@@ -111,8 +111,11 @@ Total score (lower is better) = 0
 
 Po pierwsze zająłem się problemami:
 https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md
+
 https://github.com/troessner/reek/blob/master/docs/Uncommunicative-Method-Name.md
+
 https://github.com/troessner/reek/blob/master/docs/Uncommunicative-Parameter-Name.md
+
 https://github.com/troessner/reek/blob/master/docs/Uncommunicative-Variable-Name.md
 
 Czyli odpowiednio dodałem komentarze do klas, ponazywałem metody, parametry i nazwy zmiennych.
