@@ -8,7 +8,7 @@ Ruby Gem konwertujący Dokument MS [Word do Markdown'a](https://github.com/benba
 
 # Instalacja api:
 
-```sh
+```ruby
 
  sudo apt-get install zlib1g-dev
 
@@ -18,7 +18,7 @@ Ruby Gem konwertujący Dokument MS [Word do Markdown'a](https://github.com/benba
 
 Przykładowe użycie:
 
-```sh
+```ruby
 
  w2m test.doc
 
@@ -26,7 +26,7 @@ Przykładowe użycie:
 
 W wyniku otrzymamy gotowy kod Markdown'a na STDOUT terminala
 
-```sh
+```ruby
 
 |  Pogrubiony przykład w tabelce | Zwykły w tabelce |
 
@@ -54,9 +54,9 @@ Jak widać aplikacja działa prawidłowo bez żadnych problemów.
 
 #
 
-# Przejdźmy do działania – Problemy zgłaszane przez reek
+# Problemy zgłaszane przez reek
 
-```sh
+```ruby
 
 $ reek -f json lib | jq .[].wiki\_link -r  | sort | uniq -c | sort -n
 
@@ -88,7 +88,7 @@ $ reek -f json lib | jq .[].wiki\_link -r  | sort | uniq -c | sort -n
 
 # Problemy zgłaszane przez flog
 
-```sh
+```ruby
 
  307.1: flog total
 
@@ -98,10 +98,78 @@ $ reek -f json lib | jq .[].wiki\_link -r  | sort | uniq -c | sort -n
 
 # Problemy zgłaszane przez flay
 
-```sh
+```ruby
 
 $ flay lib
 
 Total score (lower is better) = 0
 
 ```
+
+
+# Przejdźmy do działania - REFAKTORYZACJA
+
+Po pierwsze zająłem się problemami:
+https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md
+https://github.com/troessner/reek/blob/master/docs/Uncommunicative-Method-Name.md
+https://github.com/troessner/reek/blob/master/docs/Uncommunicative-Parameter-Name.md
+https://github.com/troessner/reek/blob/master/docs/Uncommunicative-Variable-Name.md
+
+Czyli odpowiednio dodałem komentarze do klas, ponazywałem metody, parametry i nazwy zmiennych.
+
+Przykładowo
+
+```ruby
+def h(n)
+      font_sizes.percentile(((HEADING_DEPTH - 1) - n) * HEADING_STEP)
+    end
+```
+kod po refaktoryzacji
+
+```ruby
+def naglowek(wielkosc)
+  font_sizes.percentile(((HEADING_DEPTH - 1) - wielkosc) * HEADING_STEP)
+end
+
+```
+
+```ruby
+class WordToMarkdown
+  class Document
+    class NotFoundError < StandardError; end
+    class ConversionError < StandardError; end
+```
+Po refaktoryzacji
+
+```ruby
+class WordToMarkdown
+  #Class Dokument wzorzec do convertowania
+  class Document
+    #Class NotFoundError obsluga wyjatku braku pliku
+    class NotFoundError < StandardError; end
+    #Class ConversionError obsluga bledow convertowania
+    class ConversionError < StandardError; end
+
+```
+
+Następnie zająłem się problemem
+
+https://github.com/troessner/reek/blob/master/docs/Utility-Function.md
+
+okazało się że funkcja idelanie pasuje w innym miejscu 
+
+W pliku document.rb znalazłem funckcję,
+
+```ruby
+    def filter
+      if WordToMarkdown.soffice.major_version == '5'
+        'html:XHTML Writer File:UTF8'
+      else
+        'html'
+      end
+    end
+```
+
+ która idealnie pasuje do innej klasy w pliku word-to-markdown.rb
+
+
