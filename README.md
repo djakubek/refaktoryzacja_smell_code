@@ -133,14 +133,12 @@ Total score (lower is better) = 0
 # Przejdźmy do działania - REFAKTORYZACJA
 
 Po pierwsze zająłem się problemami:
-
+```sh
 https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md
-
 https://github.com/troessner/reek/blob/master/docs/Uncommunicative-Method-Name.md
-
 https://github.com/troessner/reek/blob/master/docs/Uncommunicative-Parameter-Name.md
-
 https://github.com/troessner/reek/blob/master/docs/Uncommunicative-Variable-Name.md
+```
 
 Czyli odpowiednio dodałem komentarze do klas, ponazywałem metody, parametry i nazwy zmiennych.
 
@@ -180,9 +178,9 @@ class WordToMarkdown
 ```
 
 Następnie zająłem się problemem
-
+```sh
 https://github.com/troessner/reek/blob/master/docs/Utility-Function.md
-
+```
 okazało się że funkcja idelanie pasuje w innym miejscu 
 
 W pliku document.rb znalazłem funckcję,
@@ -203,8 +201,9 @@ W pliku document.rb znalazłem funckcję,
 
 
 Kolejnym zapachem. którym starałem sie poprawić był
-
+```sh
 https://github.com/troessner/reek/blob/master/docs/Prima-Donna-Method.md
+```
 
 W rubim jest możliwość dodawnia na końcu metod znaku '!' informując w ten sposób, że jest jeszcze jedna metoda o tej samej nazwie w danej klasie wykonujaca podobne czynności. 
 
