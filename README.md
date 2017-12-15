@@ -95,7 +95,6 @@ $ reek -f json| jq .[].wiki\_link -r  | sort | uniq -c | sort -n
 ```ruby
 
  307.1: flog total
-
  7.0: flog/method average
 
 ```
@@ -252,7 +251,8 @@ Kod po refaktoryzacji
 Natomiast jeśli okazało by się, że mamy dwie metody o tej samej nazwie, które wykonują coś podobnego i niemożemy ich w żaden sposób zastapić. Należało by wtedy wrzucić takie metedy w moduł i odpowiednio inicjować.
 
 
-Aby sprawdzić poprawność moich działań próbowałem uruchomić testy lecz z marnym skutkiem, ponieważ nie udało się zainstalować odpowiedniej biblioteki. Natomiast zainstalowałem ponownie GEM i wypróbowałem jego użycie i jak dotąd aplikacja działa bez zarzutu.
+Aby sprawdzić poprawność moich działań próbowałem uruchomić testy lecz z marnym skutkiem, ponieważ nie udało się zainstalować odpowiedniej biblioteki. 
+Natomiast poradziłem sobie w inny sposób poprzez ponowne zainstalowanie GEM'u i wypróbowanie jego użycie. Po reinstalacji aplikacja działa prawidłowo.
 
 
 
