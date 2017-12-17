@@ -73,6 +73,8 @@ $ reek -f json lib | jq .[].wiki\_link -r  | sort | uniq -c | sort -n
       7 https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md
       9 https://github.com/troessner/reek/blob/master/docs/Prima-Donna-Method.md
 
+Łącznie 45 zapachów w kodzie
+
 ```
 
 Po refaktoryzacji (Jest poprawa!)
@@ -87,6 +89,9 @@ $ reek -f json| jq .[].wiki\_link -r  | sort | uniq -c | sort -n
       5 https://github.com/troessner/reek/blob/master/docs/Feature-Envy.md
       5 https://github.com/troessner/reek/blob/master/docs/Nil-Check.md
       7 https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md
+
+Łącznie 24 zapachy w kodzie
+
 ```
 
 
@@ -253,7 +258,8 @@ Natomiast jeśli okazało by się, że mamy dwie metody o tej samej nazwie, któ
 
 
 Aby sprawdzić poprawność moich działań próbowałem uruchomić testy lecz z marnym skutkiem, ponieważ nie udało się zainstalować odpowiedniej biblioteki. 
-Natomiast poradziłem sobie w inny sposób poprzez ponowne zainstalowanie GEM'u i wypróbowanie jego użycie. Po reinstalacji aplikacja działa prawidłowo.
+Natomiast poradziłem sobie w inny sposób poprzez ponowne zainstalowanie GEM'u po refaktoryzacji i wypróbowanie jego użycia. 
+Po reinstalacji aplikacja działa prawidłowo.
 
 
 
